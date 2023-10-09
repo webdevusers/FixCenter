@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixCenter | Policy</title>
+
+    <link rel="stylesheet" href="./styles/css/styles.css">
+    <link rel="stylesheet" href="./styles/css/media.css">
+    <link rel="stylesheet" href="./styles/css/fonts.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__wrap wrap">
+            <div class="header-logo"><a href="/index.html"><img src="./assets/icons/logo.svg" alt="FixCenter logo"></a>
+            </div>
+            <nav class="header-items">
+                <a href="#" class="header-items__item">О нас</a>
+                <a href="/allServices.html" class="header-items__item">Услуги</a>
+                <a href="#" class="header-items__item">Магазин</a>
+                <a href="#" class="header-items__item">Контакты</a>
+                <a href="#" class="header-items__item">
+                    <div class="header-items__item-img">
+                        <img src="./assets/icons/Search.svg" alt="">
+                    </div>
+                    <div class="header-items__item-text">
+                        Статус заказа
+                    </div>
+                </a>
+            </nav>
+            <div class="header-tel">
+                <a href="tel:+37129335120">
+                    <p>+371 </p><span>29335120</span>
+                </a>
+            </div>
+            <div class="header-lang" id="switchLang" onclick="toggleActiveClass('langMenu')">
+
+                <div class="header-lang-text">
+                    РУС
+                </div>
+                <div class="header-lang-img">
+                    <img src="./assets/icons/drop-down.svg" alt="">
+                </div>
+
+                <div class="langMenu" id="langMenu">
+                    <a href="#" class="langMenu__item">РУС</a>
+                    <a href="#" class="langMenu__item">ENG</a>
+                </div>
+            </div>
+            <div class="burger-menu" onclick="toggleBurgerMenu()">
+                <img src="./assets/icons/burgermenu.svg" alt="">
+            </div>
+            <div class="burger-menu__content" id="openBurger">
+                <div class="burger-menu__content-scroll">
+                    <div class="burger-menu__content-actions">
+                        <div class="burger-menu__content-actions__logo">
+                            <img src="./assets/icons/logo-black.svg" alt="">
+                        </div>
+                        <div class="burger-menu__content-actions__close" onclick="toggleBurgerMenu()">
+                            <img src="./assets/icons/close.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="dropdown-item-action"
+                            onclick="toggleDropdown('headerServices', 'arrowHeaderServices')">
+                            <div class="dropdown-item-action__title">
+                                Наши услуги
+                            </div>
+                            <div class="dropdown-item-action__img" id="arrowHeaderServices">
+                                <img src="./assets/icons/down-arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="dropdown-item__list" id="headerServices">
+                            <li><a href="/repairApple.html" class="gray">Ремонт техники Apple</a></li>
+                            <li><a href="#" class="gray">Ремонт ноутбуков</a></li>
+                            <li><a href="#" class="gray">Ремонт смартфонов</a></li>
+                            <li><a href="#" class="gray">Ремонт планшетов</a></li>
+                            <li><a href="#" class="gray">Ремонт компьютеров</a></li>
+                            <li><a href="#" class="gray">Ремонт моноблоков</a></li>
+                            <li><a href="#" class="gray">Ремонт мониторов</a></li>
+                            <li><a href="#" class="gray">Ремонт принтеров</a></li>
+                            <li><a href="#" class="gray">Ремонт серверов NAS</a></li>
+                            <li><a href="#" class="gray">Ремонт сетевого оборудования</a></li>
+                            <li><a href="#" class="gray">Ремонт жестких дисков</a></li>
+                            <li><a href="#" class="gray">Ремонт SSD</a></li>
+                            <li><a href="#" class="gray">Восстановление данных</a></li>
+                            <li><a href="#" class="gray">Установка/настройка ПО</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="dropdown-item-action"
+                            onclick="toggleDropdown('headerCompany', 'arrowHeaderCompany')">
+                            <div class="dropdown-item-action__title">
+                                Компания
+                            </div>
+                            <div class="dropdown-item-action__img" id="arrowHeaderCompany">
+                                <img src="./assets/icons/down-arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="dropdown-item__list" id="headerCompany">
+                            <li><a href="#" class="gray">О нас</a></li>
+                            <li><a href="#" class="gray">Магазин</a></li>
+                            <li><a href="#" class="gray">Условия использования сайта</a></li>
+                        </ul>
+                    </div>
+                    <ul class="list">
+                        <div class="list-title">Контакты</div>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/location.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Pļavnieku iela 1 - 33, Rīga
+                                    LV-1021, Latvija
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/phone.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    +371 22487593
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/mail.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    fixcenter@support.com
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/telegram.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Telegram
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/whatsapp.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Whatsapp
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                    <ul class="list">
+                        <div class="list-title">Мы в соц сетях</div>
+                        <div class="row">
+                            <div class="row-item">
+                                <a href="">
+                                    <img src="./assets/icons/facebook.svg" alt="FixCenter Соц">
+                                </a>
+                            </div>
+                            <div class="row-item">
+                                <a href="">
+                                    <img src="./assets/icons/instagram.svg" alt="FixCenter Соц">
+                                </a>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="column">
+                        <div class="btn">
+                            <a href="#">
+                                <div class="btn-container">
+                                    <div class="btn-img">
+                                        <img src="./assets/icons/write.svg" alt="">
+                                    </div>
+                                    <div class="btn-text">
+                                        Заявка на ремонт
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="btn">
+                            <a href="#">
+                                <div class="btn-container gray">
+                                    <div class="btn-img">
+                                        <img src="./assets/icons/Search.svg" alt="">
+                                    </div>
+                                    <div class="btn-text black">
+                                        Статус заказа
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="policy">
+        <div class="policy__wrap wrap">
+            <div class="policy__crumbs">
+                <a href="/allServices.html">
+                    <div class="policy__crumbs-img">
+                        <img src="./assets/icons/arrow-left.svg" alt="">
+                    </div>
+                    <div class="policy__crumbs-text">
+                        К услугам
+                    </div>
+                </a>
+            </div>
+            <div class="policy__title">
+                Политика конфиденциальности
+            </div>
+            <div class="policy__subtitle">Общие положения</div>
+            <div class="policy__desc">
+                <p>Мы с большим уважением относимся к конфиденциальной (персональной) информации всех без исключения
+                    лиц, посетивших Сайт /, а также тех, кто пользуется предоставляемыми Сайтом сервисами; в связи с
+                    чем, стремится защищать конфиденциальность персональных данных (сведений или совокупности сведений о
+                    физическом лице, которое идентифицировано или может быть конкретно идентифицировано), тем самым
+                    создав и обеспечив максимально комфортные условия использования сервисов Сайта для каждого
+                    пользователя.</p> <br>
+                <p>Данная Политика конфиденциальности и защиты персональных данных (далее — «Политика») устанавливает
+                    порядок осуществления и обработки персональных данных, виды собираемых персональных данных, цели
+                    использования таких персональных данных, взаимодействие с третьими лицами, меры безопасности для
+                    защиты персональных данных, условия доступа к персональным данным, а также контактную информацию для
+                    пользователя относительно получения доступа, внесения изменений, блокирования или удаления своих
+                    персональных данных и обращения с любыми вопросами, которые могут возникнуть у Вас относительно
+                    практики защиты персональных данных.</p>
+            </div>
+            <div class="policy__subtitle">Условия доступа к персональным данным</div>
+            <div class="policy__desc">
+                <p>Порядок доступа к персональным данным третьих лиц определяется условиями согласия пользователя,
+                    предоставленного владельцу персональных данных на обработку этих данных, или в соответствии с
+                    требованиями закона.</p><br>
+                <p>Пользователь имеет право на получение любых сведений о себе у любого субъекта отношений, связанных с
+                    персональными данными, при условии указания фамилии, имени и отчества, места проживания (места
+                    пребывания) и реквизитов документа, удостоверяющего физическое лицо, подающее запрос, кроме случаев,
+                    установленных законом.</p> <br>
+                <p>Доступ пользователя к данным о себе осуществляется бесплатно.</p> <br>
+                <p>Отсрочка доступа пользователя к своим персональным данным не допускается.</p> <br>
+                <p>Отсрочка доступа к персональным данным третьих лиц допускается в случае, если необходимые данные не
+                    могут быть предоставлены в течение тридцати календарных дней со дня поступления запроса. При этом
+                    общий срок решения вопросов, затронутых в запросе, не может превышать сорока пяти календарных дней.
+                </p> <br>
+                <p>Уведомление об отсрочке доводится до сведения третьего лица, подавшего запрос, в письменной форме с
+                    разъяснением порядка обжалования такого решения.</p> <br>
+                <p>Решение об отсрочке или отказе в доступе к персональным данным может быть обжаловано к
+                    Уполномоченному Верховной Рады Украины по правам человека или через суд.</p>
+            </div>
+            <div class="policy__subtitle">Изменение Политики</div>
+            <div class="policy__desc">
+                <p>В эту Политику периодически и без предварительного уведомления пользователя об этом могут вноситься
+                    изменения и дополнения, в том числе, при изменении требований законодательства.В случае внесения
+                    существенных изменений в эту Политику, будет размещено сообщение на Сайте и указан срок вступления
+                    этих
+                    изменений в силу. Если в течение указанного срока Вы не откажетесь от их принятия в письменной
+                    форме,
+                    это будет означать, что Вы соглашаетесь с соответствующими изменениями Политики. Просим время от
+                    времени
+                    пересматривать Политику для того, чтобы быть в курсе любых изменений или дополнений.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer pt">
+        <div class="footer__wrap wrap">
+            <ul class="footer-list" id="contacts">
+                <div class="footer-list__title">
+                    <h3>Контакты</h3>
+                </div>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/location.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Pļavnieku iela 1 - 33,
+                            Rīga
+
+                            LV-1021,
+                            Latvija
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/phone.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            +371 22487593
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/mail.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            fixcenter@support.com
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/telegram.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Telegram
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/whatsapp.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Whatsapp
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="double-links">
+                <ul class="footer-list" id="hideMobile">
+                    <div class="footer-list__title">
+                        Компания
+                    </div>
+                    <li><a href="#" class="gray">
+                            О нас
+                        </a></li>
+                    <li><a href="#" class="gray">
+                            Магазин
+                        </a></li>
+                    <li><a href="#" class="gray">
+                            Условия использования сайта
+                        </a></li>
+                </ul>
+                <ul class="footer-list">
+                    <div class="footer-list__title">
+                        Мы в соц сетях
+                    </div>
+                    <li>
+                        <a href="">
+                            <div class="footer-list-img">
+                                <img src="./assets/icons/facebook.svg" alt="">
+                            </div>
+                            <div class="footer-list-text">
+                                Facebook
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="footer-list-img">
+                                <img src="./assets/icons/instagram.svg" alt="">
+                            </div>
+                            <div class="footer-list-text">
+                                Instagram
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown-item" id="showMobile">
+                <div class="dropdown-item-action" onclick="toggleDropdown('footerServices', 'arrowfooterServices')">
+                    <div class="dropdown-item-action__title footer-dropdown">
+                        Наши услуги
+                    </div>
+                    <div class="dropdown-item-action__img" id="arrowfooterServices">
+                        <img src="./assets/icons/down-arrow.svg" alt="">
+                    </div>
+                </div>
+                <ul class="dropdown-item__list" id="footerServices">
+                    <li><a href="/repairApple.html" class="gray">Ремонт техники Apple</a></li>
+                    <li><a href="#" class="gray">Ремонт ноутбуков</a></li>
+                    <li><a href="#" class="gray">Ремонт смартфонов</a></li>
+                    <li><a href="#" class="gray">Ремонт планшетов</a></li>
+                    <li><a href="#" class="gray">Ремонт компьютеров</a></li>
+                    <li><a href="#" class="gray">Ремонт моноблоков</a></li>
+                    <li><a href="#" class="gray">Ремонт мониторов</a></li>
+                    <li><a href="#" class="gray">Ремонт принтеров</a></li>
+                    <li><a href="#" class="gray">Ремонт серверов NAS</a></li>
+                    <li><a href="#" class="gray">Ремонт сетевого оборудования</a></li>
+                    <li><a href="#" class="gray">Ремонт жестких дисков</a></li>
+                    <li><a href="#" class="gray">Ремонт SSD</a></li>
+                    <li><a href="#" class="gray">Восстановление данных</a></li>
+                    <li><a href="#" class="gray">Установка/настройка ПО</a></li>
+                </ul>
+            </div>
+            <div class="dropdown-item" id="showMobile">
+                <div class="dropdown-item-action" onclick="toggleDropdown('footerCompany', 'arrowfooterCompany')">
+                    <div class="dropdown-item-action__title footer-dropdown">
+                        Компания
+                    </div>
+                    <div class="dropdown-item-action__img" id="arrowfooterCompany">
+                        <img src="./assets/icons/down-arrow.svg" alt="">
+                    </div>
+                </div>
+                <ul class="dropdown-item__list" id="footerCompany">
+                    <li><a href="#" class="gray">О нас</a></li>
+                    <li><a href="#" class="gray">Магазин</a></li>
+                    <li><a href="#" class="gray">Условия использования сайта</a></li>
+                </ul>
+            </div>
+            <ul class="footer-list" id="hideMobile">
+                <div class="footer-list__title">
+                    Наши услуги
+                </div>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт техники Apple
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт ноутбуков
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт смартфонов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт планшетов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт компьютеров
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт моноблоков
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт мониторов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт принтеров
+                    </a>
+                </li>
+            </ul>
+            <ul class="footer-list" id="hideMobile">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href="" class="gray">
+                        Ремонт серверов NAS
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт сетевого оборудования
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт жестких дисков
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт SSD
+                    </a></li>
+                <li><a href="" class="gray">
+                        Восстановление данных
+                    </a></li>
+                <li><a href="#" class="gray">
+                        Установка/настройка ПО
+                    </a></li>
+            </ul>
+            <div class="footer-buttons">
+                <a href="">
+                    <div class="btn-container">
+                        <div class="btn-img">
+                            <img src="./assets/icons/write.svg" alt="">
+                        </div>
+                        <div class="btn-text">
+                            Заявка на ремонт
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="btn-container gray">
+                        <div class="btn-img">
+                            <img src="./assets/icons/Search.svg" alt="">
+                        </div>
+                        <div class="btn-text black">
+                            Статус заказа
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="privacy">
+            <div class="privacy__wrap wrap">
+                <div class="privacy-text">
+                    © 2023 FixCenter. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleActiveClass(elementId) {
+            var item = document.getElementById(elementId);
+            item.classList.toggle('active');
+        }
+        function toggleDropdown(elementId, arrowID) {
+            var item = document.getElementById(elementId);
+            item.classList.toggle('active');
+
+            var arrowIcon = document.getElementById(arrowID);
+            arrowIcon.classList.toggle('rotate-arrow');
+        }
+        function toggleBurgerMenu() {
+            var item = document.getElementById('openBurger');
+            var wrap = document.getElementsByClassName('header__wrap')[0];
+
+            item.classList.toggle('active');
+
+            if (item.classList.contains('active')) {
+                wrap.style.margin = '0';
+            } else {
+                wrap.style.margin = '0px 20px';
+            }
+        }
+    </script>
+</body>
+
+</html>

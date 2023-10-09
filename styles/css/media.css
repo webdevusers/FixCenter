@@ -1,0 +1,27 @@
+@media (max-width: 1360px) {
+  .header-items a {
+    margin-right: 20px;
+  }
+  .header__wrap {
+    padding: 15px 100px;
+  }
+}
+@media (max-width: 1200px) {
+  .header__wrap {
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 968px) {
+  .header-items {
+    display: none;
+  }
+  .header-tel {
+    display: none;
+  }
+  .header-lang {
+    display: none;
+  }
+  .header .burger-menu {
+    display: block;
+  }
+}

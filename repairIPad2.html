@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixCenter | Ремонт IPad 2</title>
+
+    <link rel="stylesheet" href="./styles/css/styles.css">
+    <link rel="stylesheet" href="./styles/css/media.css">
+    <link rel="stylesheet" href="./styles/css/fonts.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__wrap wrap">
+            <div class="header-logo"><a href="/index.html"><img src="./assets/icons/logo.svg" alt="FixCenter logo"></a>
+            </div>
+            <nav class="header-items">
+                <a href="#" class="header-items__item">О нас</a>
+                <a href="/allServices.html" class="header-items__item">Услуги</a>
+                <a href="#" class="header-items__item">Магазин</a>
+                <a href="#" class="header-items__item">Контакты</a>
+                <a href="#" class="header-items__item">
+                    <div class="header-items__item-img">
+                        <img src="./assets/icons/Search.svg" alt="">
+                    </div>
+                    <div class="header-items__item-text">
+                        Статус заказа
+                    </div>
+                </a>
+            </nav>
+            <div class="header-tel">
+                <a href="tel:+37129335120">
+                    <p>+371 </p><span>29335120</span>
+                </a>
+            </div>
+            <div class="header-lang" id="switchLang" onclick="toggleActiveClass('langMenu')">
+
+                <div class="header-lang-text">
+                    РУС
+                </div>
+                <div class="header-lang-img">
+                    <img src="./assets/icons/drop-down.svg" alt="">
+                </div>
+
+                <div class="langMenu" id="langMenu">
+                    <a href="#" class="langMenu__item">РУС</a>
+                    <a href="#" class="langMenu__item">ENG</a>
+                </div>
+            </div>
+            <div class="burger-menu" onclick="toggleBurgerMenu()">
+                <img src="./assets/icons/burgermenu.svg" alt="">
+            </div>
+            <div class="burger-menu__content" id="openBurger">
+                <div class="burger-menu__content-scroll">
+                    <div class="burger-menu__content-actions">
+                        <div class="burger-menu__content-actions__logo">
+                            <img src="./assets/icons/logo-black.svg" alt="">
+                        </div>
+                        <div class="burger-menu__content-actions__close" onclick="toggleBurgerMenu()">
+                            <img src="./assets/icons/close.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="dropdown-item-action"
+                            onclick="toggleDropdown('headerServices', 'arrowHeaderServices')">
+                            <div class="dropdown-item-action__title">
+                                Наши услуги
+                            </div>
+                            <div class="dropdown-item-action__img" id="arrowHeaderServices">
+                                <img src="./assets/icons/down-arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="dropdown-item__list" id="headerServices">
+                            <li><a href="/repairApple.html" class="gray">Ремонт техники Apple</a></li>
+                            <li><a href="#" class="gray">Ремонт ноутбуков</a></li>
+                            <li><a href="#" class="gray">Ремонт смартфонов</a></li>
+                            <li><a href="#" class="gray">Ремонт планшетов</a></li>
+                            <li><a href="#" class="gray">Ремонт компьютеров</a></li>
+                            <li><a href="#" class="gray">Ремонт моноблоков</a></li>
+                            <li><a href="#" class="gray">Ремонт мониторов</a></li>
+                            <li><a href="#" class="gray">Ремонт принтеров</a></li>
+                            <li><a href="#" class="gray">Ремонт серверов NAS</a></li>
+                            <li><a href="#" class="gray">Ремонт сетевого оборудования</a></li>
+                            <li><a href="#" class="gray">Ремонт жестких дисков</a></li>
+                            <li><a href="#" class="gray">Ремонт SSD</a></li>
+                            <li><a href="#" class="gray">Восстановление данных</a></li>
+                            <li><a href="#" class="gray">Установка/настройка ПО</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-item">
+                        <div class="dropdown-item-action"
+                            onclick="toggleDropdown('headerCompany', 'arrowHeaderCompany')">
+                            <div class="dropdown-item-action__title">
+                                Компания
+                            </div>
+                            <div class="dropdown-item-action__img" id="arrowHeaderCompany">
+                                <img src="./assets/icons/down-arrow.svg" alt="">
+                            </div>
+                        </div>
+                        <ul class="dropdown-item__list" id="headerCompany">
+                            <li><a href="#" class="gray">О нас</a></li>
+                            <li><a href="#" class="gray">Магазин</a></li>
+                            <li><a href="#" class="gray">Условия использования сайта</a></li>
+                        </ul>
+                    </div>
+                    <ul class="list">
+                        <div class="list-title">Контакты</div>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/location.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Pļavnieku iela 1 - 33, Rīga
+                                    LV-1021, Latvija
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/phone.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    +371 22487593
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/mail.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    fixcenter@support.com
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/telegram.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Telegram
+                                </div>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="list-item">
+                                <div class="list-item-img">
+                                    <img src="./assets/icons/whatsapp.svg" alt="">
+                                </div>
+                                <div class="list-item-text">
+                                    Whatsapp
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                    <ul class="list">
+                        <div class="list-title">Мы в соц сетях</div>
+                        <div class="row">
+                            <div class="row-item">
+                                <a href="">
+                                    <img src="./assets/icons/facebook.svg" alt="FixCenter Соц">
+                                </a>
+                            </div>
+                            <div class="row-item">
+                                <a href="">
+                                    <img src="./assets/icons/instagram.svg" alt="FixCenter Соц">
+                                </a>
+                            </div>
+                        </div>
+                    </ul>
+                    <div class="column">
+                        <div class="btn">
+                            <a href="#">
+                                <div class="btn-container">
+                                    <div class="btn-img">
+                                        <img src="./assets/icons/write.svg" alt="">
+                                    </div>
+                                    <div class="btn-text">
+                                        Заявка на ремонт
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="btn">
+                            <a href="#">
+                                <div class="btn-container gray">
+                                    <div class="btn-img">
+                                        <img src="./assets/icons/Search.svg" alt="">
+                                    </div>
+                                    <div class="btn-text black">
+                                        Статус заказа
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <picture>
+            <source srcset="./assets/images/repairIPadD.png" media="(min-width: 768px)">
+            <source srcset="./assets/images/repairIPadM.png" media="(min-width: 360px)">
+            <img src="./assets/images/repairIPadM.png" alt="Banner Image">
+        </picture>
+        <div class="banner-text banner-row">
+            <div class="banner-text__img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="32" viewBox="0 0 27 32" fill="none">
+                    <path
+                        d="M25.2217 10.9099C25.0361 11.0539 21.759 12.9005 21.759 17.0065C21.759 21.7558 25.929 23.4359 26.0538 23.4775C26.0346 23.58 25.3913 25.7786 23.8552 28.0188C22.4854 29.9902 21.0549 31.9584 18.8787 31.9584C16.7025 31.9584 16.1424 30.6943 13.6302 30.6943C11.1819 30.6943 10.3114 32 8.32083 32C6.33023 32 4.94129 30.1758 3.34433 27.9356C1.49455 25.3049 0 21.2181 0 17.3393C0 11.1179 4.0452 7.81838 8.0264 7.81838C10.1418 7.81838 11.9052 9.20732 13.2333 9.20732C14.4974 9.20732 16.4688 7.73517 18.8755 7.73517C19.7876 7.73517 23.0647 7.81838 25.2217 10.9099ZM17.733 5.10131C18.7283 3.92039 19.4323 2.28183 19.4323 0.643264C19.4323 0.416042 19.4131 0.185619 19.3715 0C17.7522 0.0608061 15.8256 1.07851 14.6639 2.42584C13.7518 3.46275 12.9005 5.10131 12.9005 6.76228C12.9005 7.0119 12.9421 7.26153 12.9613 7.34153C13.0637 7.36074 13.2301 7.38314 13.3965 7.38314C14.8495 7.38314 16.6769 6.41024 17.733 5.10131Z"
+                        fill="white" />
+                </svg>
+            </div>
+            <div class="baner-text__title">
+                <h1>Ремонт iPad 2</h1>
+            </div>
+        </div>
+    </div>
+    <div class="prices">
+        <div class="prices__wrap wrap">
+            <div class="prices-container">
+                <div class="prices-container__title">Цены на ремонт iPad2</div>
+                <ul class="prices-container__list">
+                    <div class="prices-container__list-title">
+                        <div class="prices-container__list-title__text">
+                            Перечень работ
+                        </div>
+                        <div class="prices-container__list-title__currency">
+                            Стоимость, EUR
+                        </div>
+                    </div>
+                    <li class="gray">
+                        <div class="prices-container__list-name">Замена Дисплея отдельно</div>
+                        <div class="prices-container__list-price">20</div>
+                    </li>
+                    <li>
+                        <div class="prices-container__list-name">Замена Дисплейного модуля</div>
+                        <div class="prices-container__list-price">150</div>
+                    </li>
+                    <li class="gray">
+                        <div class="prices-container__list-name">Замена АКБ</div>
+                        <div class="prices-container__list-price">20</div>
+                    </li>
+                    <li>
+                        <div class="prices-container__list-name">Замена Динамика</div>
+                        <div class="prices-container__list-price">45</div>
+                    </li>
+                    <li class="gray">
+                        <div class="prices-container__list-name">Замена Микрофона</div>
+                        <div class="prices-container__list-price">20</div>
+                    </li>
+                    <li>
+                        <div class="prices-container__list-name">Замена разьема зарядного</div>
+                        <div class="prices-container__list-price">45</div>
+                    </li>
+                    <li class="gray">
+                        <div class="prices-container__list-name">Замена Камеры</div>
+                        <div class="prices-container__list-price">20</div>
+                    </li>
+                </ul>
+                <div class="prices-container__title">
+                    Что чаще всего ломается у IPad 2?
+                </div>
+                <div class="prices-container__desc">
+                    <p>Как и любая портативная техника, IPad 2 часто нуждается в ремонте экрана. Как ни старайся, а
+                        случайности случаются. Кто-то заснул на своём планшете и раздавил дисплей во сне, кто-то оставил
+                        таб
+                        на стуле и узнал об этом только после характерного хруста под собой. Если повезёт, то ремонт
+                        экрана
+                        IPad 2 обойдется только заменой защитного стекла, а не всего дисплея. Иногда может накрыться и
+                        антенна, принимающая сигнал Wi-Fi. Этот элемент IPad 2 в большинстве случаев не подлежит ремонту
+                        и
+                        приемник Wi-Fi придётся менять на новый.</p>
+                    Также на планшетах часто ломается:
+                    <ul>
+                        <li>Механическая кнопка «home»;</li>
+                        <li>Приемник сигнала;</li>
+                        <li>Разъем зарядки;</li>
+                        <li>Слот для сим-карты.</li>
+                    </ul>
+                    <p>
+                        Ремонт микрофона IPad 2 часто приходится делать после того, как планшет упал в воду. Такой
+                        ремонт IPad 2 в Киеве очень востребован, ведь все так любят принимать ванну в обнимку с любимым
+                        устройством или делать селфи, катаясь на водных горках.
+                        Но не стоит отчаиваться и винить себя в произошедшем. Skeleton позаботится о вашем устройстве,
+                        как о родном. Если вы счастливый обладатель IPad 2, наши ребята проведут качественный ремонт в
+                        Киеве. Киевские мастерские, в которых трудятся наши механики, оборудованы по последнему слову
+                        техники и всегда готовы принять планшет из любой точки страны.
+                        Сервисный центр Skeleton один из немногих центров, в котором есть опытные электронщики,
+                        проводящие компонентный ремонт плат IPad 2 в городе Киев. Такой вид обслуживания гораздо
+                        дешевле, чем замена детали. А сэкономленное время лучше потратить на что-то более важное. Для
+                        выявления неисправностей аппаратного характера мы также предлагаемдиагностику, которая занимает
+                        меньше часа и позволяет найти все косяки прошивки. Skeleton – оживим всё, даже динозавра!
+                    </p>
+                </div>
+            </div>
+            <div class="prices-contact">
+                <div class="prices-contact__title">
+                    Нужен ремонт?
+                </div>
+                <a href="#">
+                    <div class="prices-contact__img">
+                        <img src="./assets/icons/location.svg" alt="">
+                    </div>
+                    <div class="prices-contact__name">
+                        Приезжайте к нам
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="prices-contact__img">
+                        <img src="./assets/icons/phone.svg" alt="">
+                    </div>
+                    <div class="prices-contact__name">
+                        Позвоните нам
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="prices-contact__img">
+                        <img src="./assets/icons/telegram.svg" alt="">
+                    </div>
+                    <div class="prices-contact__name">
+                        Напишите нам
+                    </div>
+                </a>
+                <div class="btn">
+                    <a href="#">
+                        <div class="btn-container">
+                            <div class="btn-img">
+                                <img src="./assets/icons/write.svg" alt="">
+                            </div>
+                            <div class="btn-text">
+                                Заявка на ремонт
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq">
+        <div class="faq__wrap wrap mb">
+            <div class="faq-article">
+                <div class="faq-article__title">
+                    Куда обратиться, если нужны
+                    комфортные цены на ремонт iPad2
+                </div>
+                <div class="faq-article__desc">
+                    Мы устанавливаем комфортные цены на ремонт Айпад.
+                    Актуальный перечень работ и цены вы можете видеть на нашем сайте,
+                    там же можно оставить заявку на ремонт электронного устройства.
+                    Заявки принимаются в режиме 24/7, при их отправке вы можете указать
+                    время, в которое вам будет комфортно принять звонок.
+                </div>
+                <div class="faq-article__button" id="hideMobile">
+                    <div class="btn">
+                        <a href="">
+                            <div class="btn-container">
+                                <div class="btn-img">
+                                    <img src="./assets/icons/write.svg" alt="">
+                                </div>
+                                <div class="btn-text">
+                                    Заявка на ремонт
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleAccordion('Accordion-1', 'Plus-1')">
+                    <div class="faq-header">
+                        <div class="faq-header__title">
+                            Какие сроки на ремонт iPad2
+                        </div>
+                        <div class="faq-header__item" id="Plus-1">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="faq-answer" id="Accordion-1">
+                        <div class="faq-answer__title">
+                            Да, мы ремонтируем
+                            ноутбуки Dell, Asus, Samsung и т.д.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleAccordion('Accordion-2', 'Plus-2')">
+                    <div class="faq-header">
+                        <div class="faq-header__title">
+                            Предоставляется ли гарантия на услуги?
+                        </div>
+                        <div class="faq-header__item" id="Plus-2">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="faq-answer" id="Accordion-2">
+                        <div class="faq-answer__title">
+                            Да, мы ремонтируем
+                            ноутбуки Dell, Asus, Samsung и т.д.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleAccordion('Accordion-3', 'Plus-3')">
+                    <div class="faq-header">
+                        <div class="faq-header__title">
+                            Входит ли в стоимость ремонта стоимость комплектующих?
+                        </div>
+                        <div class="faq-header__item" id="Plus-3">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="faq-answer" id="Accordion-3">
+                        <div class="faq-answer__title">
+                            Да, мы ремонтируем
+                            ноутбуки Dell, Asus, Samsung и т.д.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleAccordion('Accordion-4', 'Plus-4')">
+                    <div class="faq-header">
+                        <div class="faq-header__title">
+                            Что еще ремонтируете?
+                        </div>
+                        <div class="faq-header__item" id="Plus-4">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="faq-answer" id="Accordion-4">
+                        <div class="faq-answer__title">
+                            Да, мы ремонтируем
+                            ноутбуки Dell, Asus, Samsung и т.д.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-article__button" id="showMobile">
+                <div class="btn">
+                    <a href="">
+                        <div class="btn-container">
+                            <div class="btn-img">
+                                <img src="./assets/icons/write.svg" alt="">
+                            </div>
+                            <div class="btn-text">
+                                Заявка на ремонт
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer pt">
+        <div class="footer__wrap wrap">
+            <ul class="footer-list" id="contacts">
+                <div class="footer-list__title">
+                    <h3>Контакты</h3>
+                </div>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/location.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Pļavnieku iela 1 - 33,
+                            Rīga
+
+                            LV-1021,
+                            Latvija
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/phone.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            +371 22487593
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/mail.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            fixcenter@support.com
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/telegram.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Telegram
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer-list-img">
+                            <img src="./assets/icons/whatsapp.svg" alt="">
+                        </div>
+                        <div class="footer-list-text">
+                            Whatsapp
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="double-links">
+                <ul class="footer-list" id="hideMobile">
+                    <div class="footer-list__title">
+                        Компания
+                    </div>
+                    <li><a href="#" class="gray">
+                            О нас
+                        </a></li>
+                    <li><a href="#" class="gray">
+                            Магазин
+                        </a></li>
+                    <li><a href="#" class="gray">
+                            Условия использования сайта
+                        </a></li>
+                </ul>
+                <ul class="footer-list">
+                    <div class="footer-list__title">
+                        Мы в соц сетях
+                    </div>
+                    <li>
+                        <a href="">
+                            <div class="footer-list-img">
+                                <img src="./assets/icons/facebook.svg" alt="">
+                            </div>
+                            <div class="footer-list-text">
+                                Facebook
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="footer-list-img">
+                                <img src="./assets/icons/instagram.svg" alt="">
+                            </div>
+                            <div class="footer-list-text">
+                                Instagram
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown-item" id="showMobile">
+                <div class="dropdown-item-action" onclick="toggleDropdown('footerServices', 'arrowfooterServices')">
+                    <div class="dropdown-item-action__title footer-dropdown">
+                        Наши услуги
+                    </div>
+                    <div class="dropdown-item-action__img" id="arrowfooterServices">
+                        <img src="./assets/icons/down-arrow.svg" alt="">
+                    </div>
+                </div>
+                <ul class="dropdown-item__list" id="footerServices">
+                    <li><a href="/repairApple.html" class="gray">Ремонт техники Apple</a></li>
+                    <li><a href="#" class="gray">Ремонт ноутбуков</a></li>
+                    <li><a href="#" class="gray">Ремонт смартфонов</a></li>
+                    <li><a href="#" class="gray">Ремонт планшетов</a></li>
+                    <li><a href="#" class="gray">Ремонт компьютеров</a></li>
+                    <li><a href="#" class="gray">Ремонт моноблоков</a></li>
+                    <li><a href="#" class="gray">Ремонт мониторов</a></li>
+                    <li><a href="#" class="gray">Ремонт принтеров</a></li>
+                    <li><a href="#" class="gray">Ремонт серверов NAS</a></li>
+                    <li><a href="#" class="gray">Ремонт сетевого оборудования</a></li>
+                    <li><a href="#" class="gray">Ремонт жестких дисков</a></li>
+                    <li><a href="#" class="gray">Ремонт SSD</a></li>
+                    <li><a href="#" class="gray">Восстановление данных</a></li>
+                    <li><a href="#" class="gray">Установка/настройка ПО</a></li>
+                </ul>
+            </div>
+            <div class="dropdown-item" id="showMobile">
+                <div class="dropdown-item-action" onclick="toggleDropdown('footerCompany', 'arrowfooterCompany')">
+                    <div class="dropdown-item-action__title footer-dropdown">
+                        Компания
+                    </div>
+                    <div class="dropdown-item-action__img" id="arrowfooterCompany">
+                        <img src="./assets/icons/down-arrow.svg" alt="">
+                    </div>
+                </div>
+                <ul class="dropdown-item__list" id="footerCompany">
+                    <li><a href="#" class="gray">О нас</a></li>
+                    <li><a href="#" class="gray">Магазин</a></li>
+                    <li><a href="#" class="gray">Условия использования сайта</a></li>
+                </ul>
+            </div>
+            <ul class="footer-list" id="hideMobile">
+                <div class="footer-list__title">
+                    Наши услуги
+                </div>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт техники Apple
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт ноутбуков
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт смартфонов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт планшетов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт компьютеров
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт моноблоков
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт мониторов
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gray">
+                        Ремонт принтеров
+                    </a>
+                </li>
+            </ul>
+            <ul class="footer-list" id="hideMobile">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href="" class="gray">
+                        Ремонт серверов NAS
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт сетевого оборудования
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт жестких дисков
+                    </a></li>
+                <li><a href="" class="gray">
+                        Ремонт SSD
+                    </a></li>
+                <li><a href="" class="gray">
+                        Восстановление данных
+                    </a></li>
+                <li><a href="#" class="gray">
+                        Установка/настройка ПО
+                    </a></li>
+            </ul>
+            <div class="footer-buttons">
+                <a href="">
+                    <div class="btn-container">
+                        <div class="btn-img">
+                            <img src="./assets/icons/write.svg" alt="">
+                        </div>
+                        <div class="btn-text">
+                            Заявка на ремонт
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="btn-container gray">
+                        <div class="btn-img">
+                            <img src="./assets/icons/Search.svg" alt="">
+                        </div>
+                        <div class="btn-text black">
+                            Статус заказа
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="privacy">
+            <div class="privacy__wrap wrap">
+                <div class="privacy-text">
+                    © 2023 FixCenter. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        function toggleActiveClass(elementId) {
+            var item = document.getElementById(elementId);
+            item.classList.toggle('active');
+        }
+        function toggleDropdown(elementId, arrowID) {
+            var item = document.getElementById(elementId);
+            item.classList.toggle('active');
+
+            var arrowIcon = document.getElementById(arrowID);
+            arrowIcon.classList.toggle('rotate-arrow');
+        }
+        function toggleBurgerMenu() {
+            var item = document.getElementById('openBurger');
+            var wrap = document.getElementsByClassName('header__wrap')[0];
+
+            item.classList.toggle('active');
+
+            if (item.classList.contains('active')) {
+                wrap.style.margin = '0';
+            } else {
+                wrap.style.margin = '0px 20px';
+            }
+        }
+        function toggleAccordion(elenmentID, plusID) {
+            let item = document.getElementById(elenmentID);
+            item.classList.toggle('active');
+            let plus = document.getElementById(plusID);
+            plus.classList.toggle('active');
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map').setView([56.9368, 24.2005], 15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Добавляем оранжевый маркер
+            var orangeIcon = L.icon({
+                iconUrl: './assets/icons/location.svg',
+                iconSize: [38, 95],
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76]
+            });
+
+            var marker = L.marker([56.9368, 24.2005], { icon: orangeIcon }).addTo(map);
+            marker.bindPopup("Pļavnieku iela 1 - 33, Rīga, LV-1021, Latvija").openPopup();
+        });
+    </script>
+</body>
+
+</html>
